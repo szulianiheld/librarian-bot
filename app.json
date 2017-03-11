@@ -1,0 +1,7 @@
+{
+  "name": "lunch-bot",
+  "description": "Slack bot for handling food reservations",
+  "repository": "https://github.com/chechtalks/lunch-bot",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "keywords": ["kotlin", "slack", "jbot"]
+}
