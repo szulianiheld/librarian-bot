@@ -1,0 +1,43 @@
+buildscript {
+    ext {
+        springBootVersion = '1.5.2.RELEASE'
+        kotlin_version = '1.1.0'
+    }
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+
+jar {
+    baseName = 'lunch-bot'
+    version = '1.0.0-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+bootRun {
+    // support passing -Dsystem.property=value to bootRun task
+    systemProperties = System.properties
+}
+
+
+dependencies {
+    compile 'org.springframework.boot:spring-boot-starter'
+    compile group: 'me.ramswaroop.jbot', name: 'jbot', version:'3.0.2'
+    compile group: 'org.jetbrains.kotlin', name: 'kotlin-stdlib', version:'1.1.0'
+    testCompile 'org.springframework.boot:spring-boot-starter-test'
+    testCompile group: 'org.jetbrains.kotlin', name: 'kotlin-test-junit', version:'1.1.0'
+}

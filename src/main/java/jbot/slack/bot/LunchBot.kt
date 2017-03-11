@@ -16,14 +16,13 @@ import java.util.regex.Matcher
 @Component
 class LunchBot : Bot() {
 
-    /**
-     * Slack token from application.properties file. You can get your slack token
-     * next [creating a new bot](https://my.slack.com/services/new/bot).
-     */
+    val LOG = LoggerFactory.getLogger(LunchBot.javaClass)
+
     @Value("\${slackBotToken}")
     lateinit private var slackToken: String
 
     override fun getSlackToken(): String {
+        LOG.trace("getting slack token : $slackToken")
         return slackToken
     }
 
