@@ -36,6 +36,7 @@ bootRun {
 
 dependencies {
     compile "org.springframework.boot:spring-boot-starter"
+    compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "me.ramswaroop.jbot:jbot:3.0.2"
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     testCompile "org.springframework.boot:spring-boot-starter-test"

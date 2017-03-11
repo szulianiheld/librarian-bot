@@ -1,6 +1,6 @@
 # lunch-bot 
 
-[![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
+[![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot) ![Heroku](http://heroku-badge.herokuapp.com/?app=calm-inlet-69187&style=flat&svg=1&root=health)
 
 Slack bot for handling food reservations at the office.
 
