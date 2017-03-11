@@ -1,4 +1,6 @@
-# lunch-bot
+# lunch-bot 
+
+[![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
 
 Slack bot for handling food reservations at the office.
 
