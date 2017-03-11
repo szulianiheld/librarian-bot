@@ -1,4 +1,4 @@
-package jbot.slack.bot
+package org.chechtalks.lunchbot.bot
 
 
 import me.ramswaroop.jbot.core.slack.Bot

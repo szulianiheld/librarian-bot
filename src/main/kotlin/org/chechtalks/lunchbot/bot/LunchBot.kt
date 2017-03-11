@@ -1,4 +1,4 @@
-package jbot.slack.bot
+package org.chechtalks.lunchbot.bot
 
 import me.ramswaroop.jbot.core.slack.Bot
 import me.ramswaroop.jbot.core.slack.Controller
@@ -16,7 +16,7 @@ import java.util.regex.Matcher
 @Component
 class LunchBot : Bot() {
 
-    val LOG = LoggerFactory.getLogger(LunchBot.javaClass)
+    val LOG = LoggerFactory.getLogger(LunchBot::class.java)
 
     @Value("\${slackBotToken}")
     lateinit private var slackToken: String
@@ -87,7 +87,7 @@ class LunchBot : Bot() {
      */
     @Controller(events = arrayOf(EventType.FILE_SHARED))
     fun onFileShared(session: WebSocketSession, event: Event) {
-        logger.info("File shared: {}", event)
+        LOG.info("File shared: {}", event)
     }
 
 
@@ -154,10 +154,5 @@ class LunchBot : Bot() {
             reply(session, event, Message("Oh! my boss is smart enough to remind himself :)"))
         }
         stopConversation(event)    // stop conversation
-    }
-
-    companion object {
-
-        private val logger = LoggerFactory.getLogger(LunchBot::class.java!!)
     }
 }
