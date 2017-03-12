@@ -41,9 +41,7 @@ class LunchBotTest {
         user.name = "LunchBot"
         user.id = "UEADGH12S"
 
-        `when`(slackService.dmChannels).thenReturn(Arrays.asList("D1E79BACV", "C0NDSV5B8"))
         `when`(slackService.currentUser).thenReturn(user)
-        `when`(slackService.webSocketUrl).thenReturn("")
     }
 
     @Test
