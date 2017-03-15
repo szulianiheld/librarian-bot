@@ -2,7 +2,7 @@
 
 [![Kotlin 1.1](https://img.shields.io/badge/Kotlin-1.1.0-blue.svg)](http://kotlinlang.org)
 [![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
-![Heroku](http://heroku-badge.herokuapp.com/?app=calm-inlet-69187&style=flat&svg=1&root=health)
+![Heroku](http://heroku-badge.herokuapp.com/?app=morfi-bot&style=flat&svg=1&root=health)
 
 Slack bot for handling food reservations at the office.
 
