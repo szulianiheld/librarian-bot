@@ -41,4 +41,11 @@ class JavaTest {
         assertThat(messages.firstContaining("AA", ignoreCase = false), nullValue())
     }
 
+    @Test
+    fun prettyToString(){
+        assertThat(listOf("Message 1", "Message 2").prettyToString(), `is`("```Message 1```\n```Message 2```"))
+        assertThat(listOf("Message 1").prettyToString(), `is`("```Message 1```"))
+        assertThat(listOf("").prettyToString(), `is`("``````"))
+    }
+
 }

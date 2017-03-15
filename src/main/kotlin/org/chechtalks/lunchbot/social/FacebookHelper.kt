@@ -21,10 +21,15 @@ class FacebookHelper(env: Environment) {
         facebook = FacebookTemplate(token)
     }
 
-    fun getFirstMessage(user: String, pattern: String = "", date: LocalDate = LocalDate.now()): String? {
+    fun getFirstPost(user: String, pattern: String = "", date: LocalDate = LocalDate.now()): String? {
         return facebook.getPosts(user, date)
                 .map { it.message }
                 .firstContaining(pattern)
+    }
+
+    fun getPosts(user: String, date: LocalDate = LocalDate.now()): List<String> {
+        return facebook.getPosts(user, date)
+                .map { it.message }
     }
 
     private fun getFacebookAccessToken(appId: String, appSecret: String): String {

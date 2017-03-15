@@ -55,7 +55,7 @@ class LunchBotTest {
         user.id = "UEADGH12S"
 
         `when`(slackService.currentUser).thenReturn(user)
-        `when`(facebook.getFirstMessage("CocinaSoho", "Hoy")).thenReturn(null)
+        `when`(facebook.getFirstPost("CocinaSoho", "Hoy")).thenReturn(null)
     }
 
     @Test

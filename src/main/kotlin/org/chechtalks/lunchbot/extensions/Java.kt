@@ -9,3 +9,5 @@ fun Date.toLocalDate(): LocalDate = this.toInstant().atZone(ZoneId.systemDefault
 fun String.contains(vararg words: String, ignoreCase: Boolean = true) = words.find { !this.contains(it, ignoreCase) } == null
 
 fun List<String>.firstContaining(vararg words: String, ignoreCase: Boolean = true) = this.find { it.contains(*words, ignoreCase = ignoreCase) }
+
+fun List<String>.prettyToString() = this.joinToString(separator = "```\n```", prefix = "```", postfix = "```")

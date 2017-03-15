@@ -7,13 +7,13 @@ import org.chechtalks.lunchbot.social.FacebookHelper
 import org.springframework.stereotype.Component
 
 @Component
-class MenuRequestCommand(private val facebook: FacebookHelper) : BotCommand {
+class SohoMenuRequest(private val facebook: FacebookHelper) : BotCommand {
 
-    val SOHO_MENU_NOT_FOUND = "No encontre el menu de hoy para Cocina Soho :thinking_face:"
+    val SOHO_MENU_NOT_FOUND = "No encontré el menú de hoy. Tal vez todavía no lo subieron :thinking_face:"
 
     override fun invoked(event: Event) = event.text.contains("menu", "soho")
 
     override fun execute(response: BotResponse) {
-        response.send(facebook.getFirstMessage("CocinaSoho", "Hoy") ?: SOHO_MENU_NOT_FOUND)
+        response.send(facebook.getFirstPost("CocinaSoho", "Hoy") ?: SOHO_MENU_NOT_FOUND)
     }
 }
