@@ -11,7 +11,7 @@ import java.time.LocalDate
 @Component
 class FacebookHelper(env: Environment) {
 
-    private lateinit var facebook: FacebookTemplate
+    lateinit var facebook: FacebookTemplate
 
     init {
         val appId = env.getProperty("spring.social.facebook.appId")
