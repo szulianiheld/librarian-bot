@@ -13,5 +13,6 @@ cache:
     - $HOME/.gradle/wrapper/
 
 notifications:
+  email: false
   slack: tandil:2a0bvGqxPuOtbyJZadge1w4z
 
