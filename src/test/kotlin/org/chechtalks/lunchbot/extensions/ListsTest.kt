@@ -6,12 +6,7 @@ import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class JavaTest {
-
-    @Test
-    fun toLocalDate() {
-
-    }
+class ListsTest {
 
     @Test
     fun contains() {
@@ -43,9 +38,9 @@ class JavaTest {
 
     @Test
     fun prettyToString(){
-        assertThat(listOf("Message 1", "Message 2").prettyToString(), `is`("```Message 1```\n```Message 2```"))
-        assertThat(listOf("Message 1").prettyToString(), `is`("```Message 1```"))
-        assertThat(listOf("").prettyToString(), `is`("``````"))
+        assertThat(listOf("Message 1", "Message 2").preformatted(), `is`("```Message 1```\n```Message 2```"))
+        assertThat(listOf("Message 1").preformatted(), `is`("```Message 1```"))
+        assertThat(listOf("").preformatted(), `is`("``````"))
     }
 
 }

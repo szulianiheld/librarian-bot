@@ -1,12 +1,10 @@
 buildscript {
     ext {
-        springBootVersion = '2.0.0.BUILD-SNAPSHOT'
-        kotlinVersion = '1.1.0'
+        springBootVersion = '1.5.+'
+        kotlinVersion = '1.1.+'
     }
     repositories {
         mavenCentral()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
     }
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
@@ -29,8 +27,7 @@ sourceCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "https://repo.spring.io/snapshot" }
-    maven { url "https://repo.spring.io/milestone" }
+    jcenter()
 }
 
 bootRun {
@@ -47,8 +44,12 @@ dependencies {
 
     /* Kotlin dependencies */
     compile "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
+    compile "org.jetbrains.kotlin:kotlin-reflect:$kotlinVersion"
     testCompile "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
 
     /* Other dependencies */
-    compile "me.ramswaroop.jbot:jbot:3.0.2"
+    compile "me.ramswaroop.jbot:jbot:3.+"
+    compile "com.beust:klaxon:0.+"
+    compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.+"
+
 }

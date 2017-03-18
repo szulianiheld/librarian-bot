@@ -4,7 +4,7 @@ import me.ramswaroop.jbot.core.slack.models.Event
 import org.chechtalks.lunchbot.bot.messaging.BotResponse
 import org.chechtalks.lunchbot.config.MessageResolver
 import org.chechtalks.lunchbot.extensions.contains
-import org.chechtalks.lunchbot.extensions.prettyToString
+import org.chechtalks.lunchbot.extensions.preformatted
 import org.chechtalks.lunchbot.social.FacebookHelper
 import org.springframework.stereotype.Component
 
@@ -21,7 +21,7 @@ class SohoPostsRequest(private val facebook: FacebookHelper, private val message
         val posts = facebook.getPosts("CocinaSoho")
 
         return when {
-            !posts.isEmpty() -> posts.prettyToString()
+            !posts.isEmpty() -> posts.preformatted()
             else -> null
         }
     }

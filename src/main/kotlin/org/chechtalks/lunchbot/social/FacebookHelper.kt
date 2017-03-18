@@ -1,6 +1,5 @@
 package org.chechtalks.lunchbot.social
 
-import org.chechtalks.lunchbot.extensions.firstContaining
 import org.chechtalks.lunchbot.extensions.getPosts
 import org.springframework.core.env.Environment
 import org.springframework.social.facebook.api.impl.FacebookTemplate
@@ -21,10 +20,10 @@ class FacebookHelper(env: Environment) {
         facebook = FacebookTemplate(token)
     }
 
-    fun getFirstPost(user: String, pattern: String = "", date: LocalDate = LocalDate.now()): String? {
+    fun getFirstPost(user: String, predicate: (String) -> Boolean, date: LocalDate = LocalDate.now()): String? {
         return facebook.getPosts(user, date)
                 .map { it.message }
-                .firstContaining(pattern)
+                .find { predicate(it) }
     }
 
     fun getPosts(user: String, date: LocalDate = LocalDate.now()): List<String> {
