@@ -13,6 +13,8 @@ logging:
                 lunchbot: TRACE
 
 spring:
+    messages:
+        basename: i18n/messages
     jackson:
         property-naming-strategy: SNAKE_CASE
     social:
