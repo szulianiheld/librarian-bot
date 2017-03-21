@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component
 import java.time.LocalDate
 
 @Component
-class SohoFormatedMenuRequest(private val facebook: FacebookHelper, private val messages: MessageResolver) : BotCommand {
+class SohoFormatedMenu(private val facebook: FacebookHelper, private val messages: MessageResolver) : BotCommand {
 
     override fun invoked(event: Event): Boolean {
         return with(event.text) {
@@ -34,6 +34,8 @@ class SohoFormatedMenuRequest(private val facebook: FacebookHelper, private val 
             response.send(ending)
         }
     }
+
+    override fun help() = messages.get("lunchbot.response.help.menu")
 
     private fun defaultResponse(response: BotResponse) = response.send(messages.get("lunchbot.response.menu.notfound"))
 }

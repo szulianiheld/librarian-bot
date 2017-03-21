@@ -7,7 +7,7 @@ import org.chechtalks.lunchbot.extensions.contains
 import org.springframework.stereotype.Component
 
 @Component
-class ComerBienMenuRequest(private val messages: MessageResolver) : BotCommand {
+class ComerBienMenu(private val messages: MessageResolver) : BotCommand {
 
     override fun invoked(event: Event) = event.text.contains("menu", "comer", "bien")
 

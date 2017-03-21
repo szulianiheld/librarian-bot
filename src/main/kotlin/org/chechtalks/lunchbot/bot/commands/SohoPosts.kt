@@ -9,13 +9,15 @@ import org.chechtalks.lunchbot.social.FacebookHelper
 import org.springframework.stereotype.Component
 
 @Component
-class SohoPostsRequest(private val facebook: FacebookHelper, private val messages: MessageResolver) : BotCommand {
+class SohoPosts(private val facebook: FacebookHelper, private val messages: MessageResolver) : BotCommand {
 
     override fun invoked(event: Event) = event.text.contains("posts", "soho")
 
     override fun execute(response: BotResponse) {
         response.send(successResponse() ?: defaultResponse())
     }
+
+    override fun help() = messages.get("lunchbot.response.help.posts")
 
     private fun successResponse(): String? {
         val posts = facebook.getPosts("CocinaSoho")
