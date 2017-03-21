@@ -1,0 +1,27 @@
+endpoints:
+    health:
+        sensitive: false
+
+management:
+    security:
+        enabled: false
+
+logging:
+    level:
+        org:
+            chechtalks:
+                lunchbot: TRACE
+
+spring:
+    messages:
+        basename: i18n/messages
+    jackson:
+        property-naming-strategy: SNAKE_CASE
+    social:
+        facebook:
+            appId: 1102158899930097
+            appSecret: 152a24d77f3424ce5ae0cfc1bf5b7a64
+
+# JBot
+rtmUrl: https://slack.com/api/rtm.start?token={token}&simple_latest&no_unreads
+slackBotToken: xoxb-153343187078-76qbrTsBEI5soXMnVp8Q0n7p

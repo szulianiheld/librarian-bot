@@ -1,17 +1,10 @@
 package org.chechtalks.lunchbot.extensions
 
-import org.hamcrest.Matchers.*
-import org.junit.Assert.assertThat
 import org.junit.Test
 import kotlin.test.assertFalse
 import kotlin.test.assertTrue
 
-class JavaTest {
-
-    @Test
-    fun toLocalDate() {
-
-    }
+class StringsTest {
 
     @Test
     fun contains() {
@@ -28,17 +21,4 @@ class JavaTest {
 
         assertTrue { mixedCase.contains("thiS", "Is", " A", "usEr", "Message") }
     }
-
-    @Test
-    fun firstContaining() {
-        val messages = listOf("Message aaaa", "Message bdd", "Message bbddh")
-
-        assertThat(messages.firstContaining("bd"), `is`(messages[1]))
-        assertThat(messages.firstContaining("ge a"), `is`(messages[0]))
-        assertThat(messages.firstContaining("Ma"), isEmptyOrNullString())
-
-        assertThat(messages.firstContaining("AA"), `is`(messages[0]))
-        assertThat(messages.firstContaining("AA", ignoreCase = false), nullValue())
-    }
-
 }

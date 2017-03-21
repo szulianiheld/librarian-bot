@@ -1,6 +1,5 @@
 package org.chechtalks.lunchbot.social
 
-import org.chechtalks.lunchbot.extensions.firstContaining
 import org.chechtalks.lunchbot.extensions.getPosts
 import org.springframework.core.env.Environment
 import org.springframework.social.facebook.api.impl.FacebookTemplate
@@ -11,7 +10,7 @@ import java.time.LocalDate
 @Component
 class FacebookHelper(env: Environment) {
 
-    private lateinit var facebook: FacebookTemplate
+    lateinit var facebook: FacebookTemplate
 
     init {
         val appId = env.getProperty("spring.social.facebook.appId")
@@ -21,10 +20,15 @@ class FacebookHelper(env: Environment) {
         facebook = FacebookTemplate(token)
     }
 
-    fun getFirstMessage(user: String, pattern: String = "", date: LocalDate = LocalDate.now()): String? {
+    fun getFirstPost(user: String, predicate: (String) -> Boolean, date: LocalDate = LocalDate.now()): String? {
         return facebook.getPosts(user, date)
                 .map { it.message }
-                .firstContaining(pattern)
+                .find { predicate(it) }
+    }
+
+    fun getPosts(user: String, date: LocalDate = LocalDate.now()): List<String> {
+        return facebook.getPosts(user, date)
+                .map { it.message }
     }
 
     private fun getFacebookAccessToken(appId: String, appSecret: String): String {

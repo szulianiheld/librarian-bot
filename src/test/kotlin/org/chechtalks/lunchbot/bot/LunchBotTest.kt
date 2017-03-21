@@ -2,7 +2,7 @@ package org.chechtalks.lunchbot.bot
 
 import me.ramswaroop.jbot.core.slack.SlackService
 import me.ramswaroop.jbot.core.slack.models.User
-import org.chechtalks.lunchbot.bot.LunchBot
+import org.chechtalks.lunchbot.bot.model.DailyMenus.Companion.isMenu
 import org.chechtalks.lunchbot.social.FacebookHelper
 import org.hamcrest.Matchers.containsString
 import org.junit.Assert.assertThat
@@ -14,7 +14,7 @@ import org.junit.runner.RunWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
-import org.mockito.junit.MockitoJUnitRunner
+import org.mockito.runners.MockitoJUnitRunner
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.rule.OutputCapture
 import org.springframework.core.env.Environment
@@ -55,7 +55,7 @@ class LunchBotTest {
         user.id = "UEADGH12S"
 
         `when`(slackService.currentUser).thenReturn(user)
-        `when`(facebook.getFirstMessage("CocinaSoho", "Hoy")).thenReturn(null)
+        `when`(facebook.getFirstPost("CocinaSoho", ::isMenu)).thenReturn(null)
     }
 
     @Test

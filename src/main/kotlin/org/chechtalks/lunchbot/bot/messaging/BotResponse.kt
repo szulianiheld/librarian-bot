@@ -1,4 +1,4 @@
-package org.chechtalks.lunchbot.bot
+package org.chechtalks.lunchbot.bot.messaging
 
 import me.ramswaroop.jbot.core.slack.Bot
 import me.ramswaroop.jbot.core.slack.models.Event
