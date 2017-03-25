@@ -1,8 +1,11 @@
-package org.chechtalks.lunchbot.bot.commands
+package org.chechtalks.lunchbot.bot.commands.impl
 
 import me.ramswaroop.jbot.core.slack.models.Event
 import me.ramswaroop.jbot.core.slack.models.Message
+import org.chechtalks.lunchbot.bot.commands.BotCommand
+import org.chechtalks.lunchbot.bot.commands.SingleMessageBotCommand
 import org.chechtalks.lunchbot.config.MessageResolver
+import org.chechtalks.lunchbot.extensions.DOUBLE_JUMP
 import org.chechtalks.lunchbot.extensions.contains
 import org.chechtalks.lunchbot.extensions.quoted
 import org.springframework.stereotype.Component
@@ -13,11 +16,11 @@ class Help(private val messages: MessageResolver, private val commands: List<Bot
     override fun invoked(event: Event) = event.text.contains("ayuda")
 
     override fun execute(): Message {
-        var message = help()
+        var message = help() + DOUBLE_JUMP
 
-        commands.also { message += "\n\n" }
-                .filter { it.help() != null }
-                .forEach { message += it.help()!!.quoted() + "\n\n" }
+        commands.map { it.help() }
+                .filterNotNull()
+                .forEach { message += it.quoted() + DOUBLE_JUMP }
 
         return Message(message)
     }

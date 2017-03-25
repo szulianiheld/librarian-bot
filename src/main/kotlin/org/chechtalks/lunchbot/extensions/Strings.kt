@@ -7,3 +7,5 @@ fun String.dropFirstNonLetters() = this.dropWhile { !it.isLetter() }
 fun String.preformatted() = "```$this```"
 
 fun String.quoted() = "> $this"
+
+const val DOUBLE_JUMP = "\n\n"

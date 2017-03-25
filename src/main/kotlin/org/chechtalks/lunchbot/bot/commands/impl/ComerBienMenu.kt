@@ -1,7 +1,8 @@
-package org.chechtalks.lunchbot.bot.commands
+package org.chechtalks.lunchbot.bot.commands.impl
 
 import me.ramswaroop.jbot.core.slack.models.Event
 import me.ramswaroop.jbot.core.slack.models.Message
+import org.chechtalks.lunchbot.bot.commands.SingleMessageBotCommand
 import org.chechtalks.lunchbot.config.MessageResolver
 import org.chechtalks.lunchbot.extensions.contains
 import org.springframework.stereotype.Component
