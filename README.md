@@ -25,4 +25,11 @@ Beforehand [create a Slack bot](https://my.slack.com/services/new/bot) in your t
 $ ./gradlew bootRun -DslackBotToken=[your-token-here]
 ```
 
-> You can also put your tocken in [application.properties](/jbot-example/src/main/resources/application.properties) and avoid passing it through command line. However, be aware that if you push it to Github your token will be disabled for security reasons.
+> You can also put your token in [application.properties](/jbot-example/src/main/resources/application.properties) and avoid passing it through command line. However, be aware that if you push it to Github your token will be disabled for security reasons.
+
+### Run with Docker
+
+```bash
+$ docker pull cesdperez/lunch-bot:latest
+$ docker run -p 8080:8080 -d -e "slackBotToken=[your-token-here]" cesdperez/lunch-bot
+```
