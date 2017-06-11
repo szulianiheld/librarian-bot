@@ -1,0 +1,14 @@
+package org.chechtalks.lunchbot.bot.commands
+
+class Keyword(vararg val synonymous: String) {
+
+    fun isPresent(command: String, ignoreCase: Boolean = true) = synonymous.any { command.contains(it, ignoreCase) }
+
+}
+
+val MENU = Keyword("menu", "menú")
+val COCINA_SOHO = Keyword("soho", "cocina soho")
+val COMER_BIEN = Keyword("comer bien", "comerbien")
+val SIN_FORMATEAR = Keyword("sin formatear", "sin_formatear", "sin formato", "sin_formato")
+val AYUDA = Keyword("ayuda", "help")
+val POSTS = Keyword("posts", "posteos", "mensajes")

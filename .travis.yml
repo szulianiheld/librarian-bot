@@ -3,6 +3,8 @@ language: java
 jdk:
   - oraclejdk8
 
+sudo: required
+
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
@@ -12,7 +14,16 @@ cache:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
 
+services:
+    - docker
+
 notifications:
   email: false
   slack: tandil:2a0bvGqxPuOtbyJZadge1w4z
 
+after_success:
+  - if [ "$TRAVIS_BRANCH" == "master" ]; then
+    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
+    docker build -t cesdperez/lunch-bot .;
+    docker push cesdperez/lunch-bot;
+    fi

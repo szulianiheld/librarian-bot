@@ -20,7 +20,7 @@ apply plugin: 'org.springframework.boot'
 
 jar {
     baseName 'lunch-bot'
-    version '0.1.1'
+    version '0.1.2'
 }
 
 sourceCompatibility = 1.8
@@ -51,5 +51,4 @@ dependencies {
     compile "me.ramswaroop.jbot:jbot:3.+"
     compile "com.beust:klaxon:0.+"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.+"
-
 }

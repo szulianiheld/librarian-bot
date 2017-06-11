@@ -7,6 +7,8 @@ import org.springframework.web.socket.WebSocketSession
 
 class BotResponse(val bot: Bot, val session: WebSocketSession, val event: Event) {
 
+    fun send(message: Message) = bot.reply(session, event, message)
+
     fun send(message: String) = bot.reply(session, event, Message(message))
 
 }

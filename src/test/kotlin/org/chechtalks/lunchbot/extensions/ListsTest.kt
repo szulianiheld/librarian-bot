@@ -3,31 +3,13 @@ package org.chechtalks.lunchbot.extensions
 import org.hamcrest.Matchers.*
 import org.junit.Assert.assertThat
 import org.junit.Test
-import kotlin.test.assertFalse
-import kotlin.test.assertTrue
 
 class ListsTest {
 
-    @Test
-    fun contains() {
-        val lowerCase = "this is a user message"
-        val mixedCase = "ThiS Is A usEr meSsage"
-
-        assertTrue { lowerCase.contains("this") }
-        assertFalse { lowerCase.contains("messageee") }
-
-        assertTrue { lowerCase.contains("this", "is", " a", "user", "message") }
-        assertFalse { lowerCase.contains("this", "is", " a", "user", "message", "crap") }
-
-        assertTrue { lowerCase.contains("thiS", "Is", " A", "usEr", "Message") }
-
-        assertTrue { mixedCase.contains("thiS", "Is", " A", "usEr", "Message") }
-    }
+    private val messages = listOf("Message aaaa", "Message bdd", "Message bbddh")
 
     @Test
     fun firstContaining() {
-        val messages = listOf("Message aaaa", "Message bdd", "Message bbddh")
-
         assertThat(messages.firstContaining("bd"), `is`(messages[1]))
         assertThat(messages.firstContaining("ge a"), `is`(messages[0]))
         assertThat(messages.firstContaining("Ma"), isEmptyOrNullString())
@@ -37,10 +19,23 @@ class ListsTest {
     }
 
     @Test
-    fun prettyToString(){
-        assertThat(listOf("Message 1", "Message 2").preformatted(), `is`("```Message 1```\n```Message 2```"))
-        assertThat(listOf("Message 1").preformatted(), `is`("```Message 1```"))
-        assertThat(listOf("").preformatted(), `is`("``````"))
+    fun preformatted() {
+        assertThat(listOf("").preformatted(), `is`(listOf("``````")))
+        assertThat(emptyList<String>().preformatted(), `is`(emptyList()))
+
+        val preformatted = messages.preformatted()
+        assertThat(preformatted, hasSize(3))
+        assertThat(preformatted, contains("```Message aaaa```", "```Message bdd```", "```Message bbddh```"))
+    }
+
+    @Test
+    fun quoted() {
+        assertThat(listOf("").quoted(), `is`(listOf("> ")))
+        assertThat(emptyList<String>().quoted(), `is`(emptyList()))
+
+        val quoted = messages.quoted()
+        assertThat(quoted, hasSize(3))
+        assertThat(quoted, contains("> Message aaaa", "> Message bdd", "> Message bbddh"))
     }
 
 }
