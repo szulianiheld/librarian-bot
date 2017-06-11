@@ -22,12 +22,6 @@ notifications:
   slack: tandil:2a0bvGqxPuOtbyJZadge1w4z
 
 after_success:
-  #I'm building in develop for testing purposes
-  - if [ "$TRAVIS_BRANCH" == "develop" ]; then
-    docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker build -t cesdperez/lunch-bot .;
-    docker push cesdperez/lunch-bot;
-    fi
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
     docker build -t cesdperez/lunch-bot .;
