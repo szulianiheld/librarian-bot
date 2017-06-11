@@ -21,6 +21,7 @@ apply plugin: 'org.springframework.boot'
 jar {
     baseName 'lunch-bot'
     version '0.2.0-SNAPSHOT'
+    archiveName "${jar.baseName}.${jar.extension}"
 }
 
 sourceCompatibility = 1.8
