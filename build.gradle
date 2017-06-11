@@ -2,7 +2,6 @@ buildscript {
     ext {
         springBootVersion = '1.5.+'
         kotlinVersion = '1.1.+'
-        gradleDockerVersion = '1.2'
     }
     repositories {
         mavenCentral()
@@ -11,7 +10,6 @@ buildscript {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
         classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlinVersion"
-        classpath "se.transmode.gradle:gradle-docker:$gradleDockerVersion"
     }
 }
 
@@ -19,7 +17,6 @@ apply plugin: 'kotlin'
 apply plugin: 'kotlin-spring'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
-apply plugin: 'docker'
 
 jar {
     baseName 'lunch-bot'
@@ -36,21 +33,6 @@ repositories {
 bootRun {
     systemProperties = System.properties
 }
-
-group = 'cesdperez'
-
-task buildDocker(type: Docker, dependsOn: build) {
-    push = false
-    applicationName = jar.baseName
-    dockerfile = file('src/main/docker/Dockerfile')
-    doFirst {
-        copy {
-            from jar
-            into stageDir
-        }
-    }
-}
-
 
 dependencies {
     /* Spring dependencies */
