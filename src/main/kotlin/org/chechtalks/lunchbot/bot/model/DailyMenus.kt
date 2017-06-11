@@ -32,7 +32,8 @@ data class DailyMenus(val beginning: String, val menus: List<String>, val ending
         }
 
         fun isMenu(post: String): Boolean {
-            return post.contains("hoy", "$") && post.length > 20
+            val atLeast3Menus = Regex(""".+\$.+\$.+\$.+""", RegexOption.DOT_MATCHES_ALL)
+            return post.matches(atLeast3Menus) && post.length > 20
         }
 
     }

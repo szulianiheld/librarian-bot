@@ -1,9 +1,6 @@
 package org.chechtalks.lunchbot.bot.model
 
-import org.chechtalks.lunchbot.constants.BROKEN_MENU_POST
-import org.chechtalks.lunchbot.constants.MENU_POST_1
-import org.chechtalks.lunchbot.constants.MENU_POST_2
-import org.chechtalks.lunchbot.constants.MENU_POST_3
+import org.chechtalks.lunchbot.constants.*
 import org.hamcrest.CoreMatchers.*
 import org.junit.Assert.assertThat
 import org.junit.Test
@@ -17,7 +14,9 @@ class DailyMenusTest {
         assertTrue(DailyMenus.isMenu(MENU_POST_1))
         assertTrue(DailyMenus.isMenu(MENU_POST_2))
         assertTrue(DailyMenus.isMenu(MENU_POST_3))
-        assertFalse(DailyMenus.isMenu(BROKEN_MENU_POST))
+        assertTrue(DailyMenus.isMenu(MENU_POST_4))
+        assertFalse(DailyMenus.isMenu(NOT_MENU_POST_1))
+        assertFalse(DailyMenus.isMenu(NOT_MENU_POST_2))
     }
 
     @Test
@@ -73,7 +72,7 @@ class DailyMenusTest {
     }
 
     @Test(expected = IllegalArgumentException::class)
-    fun it_checks_for_invalid_menues() {
-        DailyMenus.from(BROKEN_MENU_POST).menus
+    fun it_checks_for_invalid_menus() {
+        DailyMenus.from(NOT_MENU_POST_1).menus
     }
 }

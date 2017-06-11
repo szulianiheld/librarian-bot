@@ -79,8 +79,27 @@ PARA CONSULTAS y PEDIDOS llamar al 44 3 22 74 o por mensaje privado en la Fan Pa
 Otro final
 mas"""
 
-const val BROKEN_MENU_POST = """HOY - Martes - Mediodía en Cocina Soho!!!
+const val MENU_POST_4 = """Para este mediodia te propongo:
+
+- BIFE de CHORIZO a la parrilla con Tomates Asados Rellenos y Gratinados  con pesto de Rucula ($70)
+
+o
+
+- ENSALADA COBB con hojas Verdes, Pollo, Panceta, Queso Azul, Huevo, Verdeo y Aderezo Balsamico ($70)
+
+o
+
+TARTA del Dia: Mix de Vegetales, Cerdo, Avena, Ricotta y semillas (Media Tarta $90) o POrcion con ensalada verde y tomate ($70)
+"""
+
+const val NOT_MENU_POST_1 = """HOY - Martes - Mediodía en Cocina Soho!!!
 
 Para este mediodia te propongo:
 
 ...!!"""
+
+const val NOT_MENU_POST_2 = """Buenos días!!!
+
+Les informamos que a partir de la semana que viene el precio del menú del día será de $90.
+
+Las ensaladas van a estar a $40."""
