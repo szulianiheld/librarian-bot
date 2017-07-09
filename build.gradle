@@ -50,6 +50,5 @@ dependencies {
 
     /* Other dependencies */
     compile "me.ramswaroop.jbot:jbot:3.+"
-    compile "com.beust:klaxon:0.+"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:2.+"
 }

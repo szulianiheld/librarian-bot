@@ -13,7 +13,7 @@ import org.chechtalks.lunchbot.social.FacebookHelper
 import org.springframework.stereotype.Component
 
 @Component
-class GetMenu(private val facebook: FacebookHelper, private val messages: MessageResolver) : SingleMessageBotCommand {
+class SohoMenuUnformatted(private val facebook: FacebookHelper, private val messages: MessageResolver) : SingleMessageBotCommand {
 
     override fun invoked(event: Event) = event.text.contains(MENU, COCINA_SOHO, SIN_FORMATEAR)
 
