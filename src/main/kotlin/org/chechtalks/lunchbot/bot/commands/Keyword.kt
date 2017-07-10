@@ -9,6 +9,7 @@ class Keyword(vararg val synonymous: String) {
 val MENU = Keyword("menu", "menú")
 val COCINA_SOHO = Keyword("soho", "cocina soho")
 val COMER_BIEN = Keyword("comer bien", "comerbien")
+val LO_DE_ROSA = Keyword("lo de rosa", "loderosa", "lo de rosita")
 val SIN_FORMATEAR = Keyword("sin formatear", "sin_formatear", "sin formato", "sin_formato")
 val AYUDA = Keyword("ayuda", "help")
 val POSTS = Keyword("posts", "posteos", "mensajes")
