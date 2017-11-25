@@ -1,12 +1,12 @@
 # lunch-bot 
 
-[![Kotlin 1.1](https://img.shields.io/badge/Kotlin-1.1.0-blue.svg)](http://kotlinlang.org)
+[![Kotlin 1.1](https://img.shields.io/badge/Kotlin-1.1.161-blue.svg)](http://kotlinlang.org)
 [![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
 ![Heroku](http://heroku-badge.herokuapp.com/?app=morfi-bot&style=flat&svg=1&root=health)
 
 Slack bot for handling food reservations at the office.
 
-It's built on top of [JBot](https://github.com/ramswaroop/jbot) and is written in [Kotlin](https://kotlinlang.org/).
+It's written in [Kotlin](https://kotlinlang.org/) and consumes Slack API through [JBot](https://github.com/ramswaroop/jbot) and [JSlack](https://github.com/seratch/jslack).
 
 ## How to run it
 
