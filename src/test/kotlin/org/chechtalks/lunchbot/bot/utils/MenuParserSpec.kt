@@ -1,12 +1,13 @@
 package org.chechtalks.lunchbot.bot.utils
 
+
+import com.natpryce.hamkrest.assertion.assert
+import com.natpryce.hamkrest.startsWith
 import org.chechtalks.lunchbot.constants.MENU_POST_1
-import org.hamcrest.CoreMatchers.startsWith
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
 import org.jetbrains.spek.api.dsl.on
-import org.junit.Assert.assertThat
 import kotlin.test.expect
 
 class MenuParserSpec : Spek({
@@ -28,7 +29,7 @@ class MenuParserSpec : Spek({
             it("parses all menus") {
                 expect(38) { result.size }
                 expect("> Carne") { result[1] }
-                assertThat(result[32], startsWith("> Calabresa"))
+                assert.that(result[32], startsWith("> Calabresa"))
             }
         }
     }
