@@ -1,6 +1,6 @@
 package org.chechtalks.lunchbot.constants
 
-const val MENU_POST_1 = """HOY - Viernes - Mediodía en Cocina Soho!!
+const val SOHO_MENU_POST_1 = """HOY - Viernes - Mediodía en Cocina Soho!!
 
 Para este mediodia te propongo:
 
@@ -26,7 +26,7 @@ ENSALADAS de FRUTAS FRESCAS ($40)
 
 PARA PEDIDOS y CONSULTAS podes llamar al 44 3 22 74 o por MENSAJE PRIVADO en la FAN PAGE o personalmente por el local que queda en la calle Maipu 667, entre 9 de Julio y Rodriguez."""
 
-const val MENU_POST_2 = """HOY - Miércoles - Mediodía en Cocina Soho!!
+const val SOHO_MENU_POST_2 = """HOY - Miércoles - Mediodía en Cocina Soho!!
 
 Con estas propuestas:
 
@@ -52,7 +52,7 @@ Ademas:
 
 - Tomates Asados Rellenos con mix de Arroz y Vegetales con Ensalada Verde ($50)"""
 
-const val MENU_POST_3 = """HOY - Martes - Mediodía en Cocina Soho!!!
+const val SOHO_MENU_POST_3 = """HOY - Martes - Mediodía en Cocina Soho!!!
 
 Para este mediodia te propongo:
 
@@ -79,7 +79,7 @@ PARA CONSULTAS y PEDIDOS llamar al 44 3 22 74 o por mensaje privado en la Fan Pa
 Otro final
 mas"""
 
-const val MENU_POST_4 = """Para este mediodia te propongo:
+const val SOHO_MENU_POST_4 = """Para este mediodia te propongo:
 
 - BIFE de CHORIZO a la parrilla con Tomates Asados Rellenos y Gratinados  con pesto de Rucula ($70)
 
@@ -92,14 +92,50 @@ o
 TARTA del Dia: Mix de Vegetales, Cerdo, Avena, Ricotta y semillas (Media Tarta $90) o POrcion con ensalada verde y tomate ($70)
 """
 
-const val NOT_MENU_POST_1 = """HOY - Martes - Mediodía en Cocina Soho!!!
+const val NOT_SOHO_MENU_POST_1 = """HOY - Martes - Mediodía en Cocina Soho!!!
 
 Para este mediodia te propongo:
 
 ...!!"""
 
-const val NOT_MENU_POST_2 = """Buenos días!!!
+const val NOT_SOHO_MENU_POST_2 = """Buenos días!!!
 
 Les informamos que a partir de la semana que viene el precio del menú del día será de $90.
 
 Las ensaladas van a estar a $40."""
+
+const val ALPUNTO_MENU_POST_1 = """Hoy JUEVES en Al Punto Justo tenemos:
+
+- SANDWICH DE BONDIOLA CON PAPAS AL HORNO ( con QUESO FUNDIDO, TOMATE, CEBOLLA CARAMELIZADA y ADEREZO ) una bomba de sabores para no dejar pasar, con pancito casero y el toque de la casa 🍔👌
+
+- TARTA DE POLLO Y CALABAZA CON ENSALADA ( Mix de hojas verdes frescas, tomate cherry y aderezo de la casa) opción bien tentadora 😋
+
+- EMPANADAS DE CARNE (3 unidades) CON ENSALADA ( Mix de hojas verdes frescas, tomate cherry y aderezo de la casa ) 👌
+
+- HAMBURGUESAS VEGETARIANAS (con tomate y queso fundido) CON ENSALADA ( Mix de hojas verdes frescas, calabazas asadas, tomate cherry y aderezo de la casa ).
+
+Y como alternativa fresquita las ensaladas de la casa 🥗🍅🥕
+
+- ENSALADA CAESAR ( Mix de hojas verdes frescas, tomate cherry, daditos de pollo, crutones y semillas ).
+
+- ENSALADA ATUNADA ( Mix de hojas verdes frescas, tomate cherry, cebolla caramelizada, huevo duro, atún y semillas )
+
+Hacenos tu pedido al 2494515551, o al 4387792, nuestro nuevo teléfono fijo, y en un ratito te lo llevamos al punto justo!"""
+
+const val ALPUNTO_MENU_POST_2 = """Hoy VIERNES en Al Punto Justo tenemos:
+
+- SANDWICH DE BONDIOLA CON PAPAS AL HORNO ( con QUESO FUNDIDO, LECHUGA, TOMATE, CEBOLLA CARAMELIZADA y ADEREZO ) una bomba de sabores para no dejar pasar, con pancito casero y el toque de la casa 🍔👌
+
+- TARTA DE CALABAZA Y ESPINACA CON ENSALADA ( Mix de hojas verdes frescas, tomate cherry y aderezo de la casa) opción bien tentadora 😋
+
+- HAMBURGUESAS VEGETARIANAS (con tomate y queso fundido) CON ENSALADA ( Mix de hojas verdes frescas, calabazas asadas, tomate cherry y aderezo de la casa ).
+
+Y como alternativa fresquita las ensaladas de la casa 🥗🍅🥕
+
+- ENSALADA CAESAR ( Mix de hojas verdes frescas, tomate cherry, daditos de pollo, crutones y semillas ).
+
+- ENSALADA ATUNADA ( Mix de hojas verdes frescas, tomate cherry, cebolla caramelizada, huevo duro, atún y semillas )
+
+Hacenos tu pedido al 2494515551, o al 4387792, nuestro nuevo teléfono fijo, y en un ratito te lo llevamos al punto justo!"""
+
+const val NOT_ALPUNTO_MENU_POST_1 = """A partir de mañana el menu del dia sale $100 - ensaladas $90"""

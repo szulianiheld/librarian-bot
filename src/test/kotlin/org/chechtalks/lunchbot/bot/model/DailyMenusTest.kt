@@ -11,17 +11,17 @@ class DailyMenusTest {
 
     @Test
     fun it_validates_posts() {
-        assertTrue(DailyMenus.isMenu(MENU_POST_1))
-        assertTrue(DailyMenus.isMenu(MENU_POST_2))
-        assertTrue(DailyMenus.isMenu(MENU_POST_3))
-        assertTrue(DailyMenus.isMenu(MENU_POST_4))
-        assertFalse(DailyMenus.isMenu(NOT_MENU_POST_1))
-        assertFalse(DailyMenus.isMenu(NOT_MENU_POST_2))
+        assertTrue(DailyMenus.isValidSohoMenu(SOHO_MENU_POST_1))
+        assertTrue(DailyMenus.isValidSohoMenu(SOHO_MENU_POST_2))
+        assertTrue(DailyMenus.isValidSohoMenu(SOHO_MENU_POST_3))
+        assertTrue(DailyMenus.isValidSohoMenu(SOHO_MENU_POST_4))
+        assertFalse(DailyMenus.isValidSohoMenu(NOT_SOHO_MENU_POST_1))
+        assertFalse(DailyMenus.isValidSohoMenu(NOT_SOHO_MENU_POST_2))
     }
 
     @Test
     fun it_removes_leading_crap_in_menues() {
-        val parsedOptions = DailyMenus.from(MENU_POST_1).menus
+        val parsedOptions = DailyMenus.fromSoho(SOHO_MENU_POST_1).menus
 
         assertThat(parsedOptions[0], startsWith("BIFE DE CHORIZO"))
         assertThat(parsedOptions[1], startsWith("QUESADILLA de VEGETALES"))
@@ -30,7 +30,7 @@ class DailyMenusTest {
 
     @Test
     fun it_parses_case1() {
-        val parsedMenu = DailyMenus.from(MENU_POST_1)
+        val parsedMenu = DailyMenus.fromSoho(SOHO_MENU_POST_1)
 
         assertThat(parsedMenu.menus.size, `is`(7))
         parsedMenu.menus.forEach { assertThat(it, containsString("$")) }
@@ -45,7 +45,7 @@ class DailyMenusTest {
 
     @Test
     fun it_parses_case2() {
-        val parsedMenu = DailyMenus.from(MENU_POST_2)
+        val parsedMenu = DailyMenus.fromSoho(SOHO_MENU_POST_2)
 
         assertThat(parsedMenu.menus.size, `is`(7))
         parsedMenu.menus.forEach { assertThat(it, containsString("$")) }
@@ -59,7 +59,7 @@ class DailyMenusTest {
 
     @Test
     fun it_parses_case3() {
-        val parsedMenu = DailyMenus.from(MENU_POST_3)
+        val parsedMenu = DailyMenus.fromSoho(SOHO_MENU_POST_3)
 
         assertThat(parsedMenu.menus.size, `is`(6))
         parsedMenu.menus.forEach { assertThat(it, containsString("$")) }
@@ -69,10 +69,5 @@ class DailyMenusTest {
 
         assertThat(parsedMenu.ending, containsString("PARA CONSULTAS y PEDIDOS"))
         assertThat(parsedMenu.ending, containsString("Otro final"))
-    }
-
-    @Test(expected = IllegalArgumentException::class)
-    fun it_checks_for_invalid_menus() {
-        DailyMenus.from(NOT_MENU_POST_1).menus
     }
 }

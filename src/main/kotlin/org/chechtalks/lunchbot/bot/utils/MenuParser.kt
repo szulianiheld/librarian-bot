@@ -10,8 +10,13 @@ import java.net.URL
 @Component
 class MenuParser(val menuBeautifier: (String) -> String = String::quoted) {
 
-    fun parse(rawTextMenu: String): List<String> {
-        val dailyMenus = DailyMenus.from(rawTextMenu)
+    fun parseSoho(rawTextMenu: String): List<String> {
+        val dailyMenus = DailyMenus.fromSoho(rawTextMenu)
+        return parse(dailyMenus)
+    }
+
+    fun parseAlPunto(rawTextMenu: String): List<String> {
+        val dailyMenus = DailyMenus.fromAlPunto(rawTextMenu)
         return parse(dailyMenus)
     }
 

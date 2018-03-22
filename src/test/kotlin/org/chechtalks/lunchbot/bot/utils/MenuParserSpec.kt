@@ -3,7 +3,7 @@ package org.chechtalks.lunchbot.bot.utils
 
 import com.natpryce.hamkrest.assertion.assert
 import com.natpryce.hamkrest.startsWith
-import org.chechtalks.lunchbot.constants.MENU_POST_1
+import org.chechtalks.lunchbot.constants.SOHO_MENU_POST_1
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
 import org.jetbrains.spek.api.dsl.it
@@ -16,7 +16,7 @@ class MenuParserSpec : Spek({
         val menuParser = MenuParser()
 
         on("raw text parsing") {
-            val result = menuParser.parse(MENU_POST_1)
+            val result = menuParser.parseSoho(SOHO_MENU_POST_1)
             it("parses all menus") {
                 expect(9) { result.size }
             }

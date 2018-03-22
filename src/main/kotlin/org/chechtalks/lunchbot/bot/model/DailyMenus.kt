@@ -8,34 +8,50 @@ data class DailyMenus(val beginning: String, val menus: List<String>, val ending
 
     companion object {
 
-        fun from(rawMenu: String): DailyMenus {
-
-            if (!isMenu(rawMenu)) throw IllegalArgumentException("\"$rawMenu\" is not a valid menu")
-
-            val relevantLines = rawMenu
-                    .split("\n")
-                    .filter { it.length > 5 }
-                    .map { it.dropFirstNonLetters() }
-
-            val options = relevantLines
-                    .filter { it.contains("$") }
-
-            val beginning = relevantLines
-                    .takeWhile { it != options.first() }
-                    .humanToString()
-
-            val ending = relevantLines
-                    .takeLastWhile { it != options.last() }
-                    .humanToString()
-
+        fun from(rawMenu: String, isMenu: (String) -> Boolean): DailyMenus {
+            val relevantLines = parseRelevantLines(rawMenu)
+            val options = parseMenuOptions(relevantLines, isMenu)
+            val beginning = parseBeginning(relevantLines, options)
+            val ending = parseEnding(relevantLines, options)
             return DailyMenus(beginning, options, ending)
         }
 
-        fun isMenu(post: String): Boolean {
+        fun fromSoho(rawMenu: String) = from(rawMenu) { it.contains("$") }
+
+        fun fromAlPunto(rawMenu: String) = from(rawMenu) { it.contains("- ") }
+
+        fun isValidSohoMenu(rawMenu: String): Boolean {
             val atLeast3Menus = Regex(""".+\$.+\$.+\$.+""", RegexOption.DOT_MATCHES_ALL)
-            return post.matches(atLeast3Menus) && post.length > 20
+            return rawMenu.matches(atLeast3Menus) && rawMenu.length > 20
         }
 
-    }
+        fun isValidAlPuntoMenu(rawMenu: String): Boolean {
+            val atLeast3Menus = Regex(""".+\n-.+\n-.+\n-.+""", RegexOption.DOT_MATCHES_ALL)
+            return rawMenu.matches(atLeast3Menus) && rawMenu.length > 20
+        }
 
+        private fun parseRelevantLines(rawMenu: String): List<String> {
+            return rawMenu
+                    .split("\n")
+                    .filter { it.length > 5 }
+                    .map { it.dropFirstNonLetters() }
+        }
+
+        private fun parseMenuOptions(relevantLines: List<String>, isMenu: (String) -> Boolean): List<String> {
+            return relevantLines
+                    .filter { isMenu(it) }
+        }
+
+        private fun parseBeginning(relevantLines: List<String>, options: List<String>): String {
+            return relevantLines
+                    .takeWhile { it != options.first() }
+                    .humanToString()
+        }
+
+        private fun parseEnding(relevantLines: List<String>, options: List<String>): String {
+            return relevantLines
+                    .takeLastWhile { it != options.last() }
+                    .humanToString()
+        }
+    }
 }
