@@ -6,8 +6,7 @@ import org.chechtalks.lunchbot.bot.commands.AL_PUNTO_JUSTO
 import org.chechtalks.lunchbot.bot.commands.MENU
 import org.chechtalks.lunchbot.bot.commands.SIN_FORMATEAR
 import org.chechtalks.lunchbot.bot.commands.SingleMessageBotCommand
-import org.chechtalks.lunchbot.bot.model.DailyMenus
-import org.chechtalks.lunchbot.bot.model.DailyMenus.Companion.isValidAlPuntoMenu
+import org.chechtalks.lunchbot.bot.utils.MenuParser.Companion.isValidAlPuntoMenu
 import org.chechtalks.lunchbot.config.MessageResolver
 import org.chechtalks.lunchbot.extensions.contains
 import org.chechtalks.lunchbot.social.FacebookHelper

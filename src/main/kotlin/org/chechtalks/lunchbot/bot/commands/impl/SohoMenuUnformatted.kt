@@ -6,7 +6,7 @@ import org.chechtalks.lunchbot.bot.commands.COCINA_SOHO
 import org.chechtalks.lunchbot.bot.commands.MENU
 import org.chechtalks.lunchbot.bot.commands.SIN_FORMATEAR
 import org.chechtalks.lunchbot.bot.commands.SingleMessageBotCommand
-import org.chechtalks.lunchbot.bot.model.DailyMenus.Companion.isValidSohoMenu
+import org.chechtalks.lunchbot.bot.utils.MenuParser.Companion.isValidSohoMenu
 import org.chechtalks.lunchbot.config.MessageResolver
 import org.chechtalks.lunchbot.extensions.contains
 import org.chechtalks.lunchbot.social.FacebookHelper

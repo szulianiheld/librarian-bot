@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class SohoMenuFormatted(
-        private val sohoMenuUnformatted: SohoMenuUnformatted,
-        private val menuParser: MenuParser)
+        private val sohoMenuUnformatted: SohoMenuUnformatted)
     : MultiMessageBotCommand {
 
     override fun invoked(event: Event) = event.text.contains(MENU, COCINA_SOHO) && !sohoMenuUnformatted.invoked(event)
@@ -20,7 +19,7 @@ class SohoMenuFormatted(
     override fun execute(): List<Message> {
         val sohoMenus = sohoMenuUnformatted.successResponse() ?: return defaultResponse()
 
-        return menuParser
+        return MenuParser
                 .parseSoho(sohoMenus)
                 .map(::Message)
     }

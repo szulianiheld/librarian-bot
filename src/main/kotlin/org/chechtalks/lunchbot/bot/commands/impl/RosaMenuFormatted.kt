@@ -10,7 +10,7 @@ import org.chechtalks.lunchbot.extensions.contains
 import org.springframework.stereotype.Component
 
 @Component
-class RosaMenuFormatted(private val menuParser: MenuParser) : MultiMessageBotCommand {
+class RosaMenuFormatted : MultiMessageBotCommand {
 
     private val JSON_MENUS = "/menu/lo-de-rosa.json"
 
@@ -19,7 +19,7 @@ class RosaMenuFormatted(private val menuParser: MenuParser) : MultiMessageBotCom
     override fun execute(): List<Message> {
         val rosaMenus = this.javaClass.getResource(JSON_MENUS)
 
-        return menuParser
+        return MenuParser
                 .parse(rosaMenus)
                 .map(::Message)
     }

@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component
 
 @Component
 class AlPuntoMenuFormatted(
-        private val alPuntoMenuUnformatted: AlPuntoMenuUnformatted,
-        private val menuParser: MenuParser)
+        private val alPuntoMenuUnformatted: AlPuntoMenuUnformatted)
     : MultiMessageBotCommand {
 
     override fun invoked(event: Event) = event.text.contains(MENU, AL_PUNTO_JUSTO) && !alPuntoMenuUnformatted.invoked(event)
@@ -20,7 +19,7 @@ class AlPuntoMenuFormatted(
     override fun execute(): List<Message> {
         val sohoMenus = alPuntoMenuUnformatted.successResponse() ?: return defaultResponse()
 
-        return menuParser
+        return MenuParser
                 .parseAlPunto(sohoMenus)
                 .map(::Message)
     }

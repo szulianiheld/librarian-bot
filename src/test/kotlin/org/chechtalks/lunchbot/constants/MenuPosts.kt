@@ -1,110 +1,148 @@
 package org.chechtalks.lunchbot.constants
 
-const val SOHO_MENU_POST_1 = """HOY - Viernes - Mediodía en Cocina Soho!!
+const val SOHO_MENU_VALID = """RESERVAS y PEDIDOS al 154496216 o al 4432274 o por mensaje privado en la Fan Page!!
 
-Para este mediodia te propongo:
+NUEVA CARTA - NUEVOS PLATOS - NUEVA CARTA de VINOS - NUEVA DECORACION!!
 
-- BIFE DE CHORIZO a la PARRILLA con PAPA estilo Americano, gratinada con Mozzarella y Verdeo ($70)
+Para COMER ACA, LLEVAR o DELIVERY
 
-o
+PEDIDOS y RESERVAS al 4432274, por mensaje privado en la FAN PAGE o personalmente por el local. Maipu 667, casi 9 de Julio, TANDIL.
 
-* QUESADILLA de VEGETALES (Pasta de Berenjenas, Zuchinis y Zanahorias a la plancha) con Mozzarella y Ensalada Verde con Tomate Fresco ($70)
+LOS ESPECIALES DE COCINA SOHO (para comer aca)
 
-o
+ENTRADAS
 
-    - TARTA del DIA: Pollo, Curry de Especias, Laminas de Zucchini, Avena, Ricotta, Arvejas y Semillas. Opcion Porción con Ensalada ($70) o MEDIA TARTA ($90)
+PINCHOS de LANGOSTINOS a la PARRILLA Tomates Cherry Confit, Palta Fresca, Hojas Verdes, Almendras Tostadas y Aderezo de Limón (${'$'}220)
 
-- Medallon de ARROZ YAMANI a la plancha con Especias, Ensalada Verde, Tomate y Vegetales. ($70)
+PAPAS SOHO Gratinadas con Queso Mozzarella, Panceta Ahumada de Las Dinas, Verdeo y Semillas
+(${'$'}125)
 
-o
+MOLLEJAS CROCANTES, Aceite de tomillo, Papines Asados y Mix de Cebollas y Morrones Asados
+(${'$'}220)
 
-CALABAZAS ASADAS RELLENAS con Salteado de Arroz, Vegetales, Mozzarella Gratinada y Pesto de Rucula con Semillas ($60)
+TOSTON de PORCHETTA a la Parrilla, Vegetales Salteados, Tomate fresco y hojas de Rucula
+(${'$'}180)
 
-ENSALADAS FRESCAS (Rucula / Tomate / Huevo / Choclo / Zanahoria / Repollo / Remolacha) ($40)
+PROVOLETA a la PLANCHA, con Morrones, Berenjenas y Choclo Asado
+(${'$'}150)
 
-ENSALADAS de FRUTAS FRESCAS ($40)
+PRINCIPALES
 
-PARA PEDIDOS y CONSULTAS podes llamar al 44 3 22 74 o por MENSAJE PRIVADO en la FAN PAGE o personalmente por el local que queda en la calle Maipu 667, entre 9 de Julio y Rodriguez."""
+BIFE DE COSTILLA a la PARRILLA, marinado en hierbas. Con Huevo en Canasta de Morrón, Verdeo, Panceta y Papas
+(${'$'}220)
 
-const val SOHO_MENU_POST_2 = """HOY - Miércoles - Mediodía en Cocina Soho!!
+BONDIOLA de 12 Horas de Ahumado (Cabaña Las Dinas) a la Parrilla Batatas Gratinadas, Rucula Fresca y Cebollas al Malbec
+(${'$'}200)
 
-Con estas propuestas:
+PECHUGA de POLLO RELLENA, con Mousseline de Espinaca, Tomates secos y Zanahoria Asada. Con Calabaza Asada y Reducción de Champagne
+(${'$'}190)
 
-MILANESA de CERDO al Horno, gratinada con Queso Mozzarella, Tomate Fresco y Opción de Ensalada Verde o PAPAS Asadas. ($70)
+RIBS de CERDO BRASEADO en Especias, laqueado con Barbacoa Ahumada y Guarnición de Papa Americana al horno, Queso crema y Ciboulette
+(${'$'}220)
 
-o
+LENGUADO a la PIZZA con tomate fresco, oregano, morrón asado, aceitunas y Papas Especiadas
+(${'$'}200)
 
-CALABAZAS ASADAS RELLENAS con Mix de Vegetales, POLLO (opcional), Mozzarella y Pesto de Rucula con Semillas ($70)
+MILHOJAS de VEGETALES al Horno, Pesto de Rucula con Almendras, Gratinada con Queso Mozzarella y Ensalada de Hojas Verdes, Tomate Cherry, Brotes y Aderezo Balsamico
+(${'$'}190)
 
-o
+PASTA del DIA, con Salsa Crema de Tomates, Albahaca Fresca y Cebollas Asadas. Gratinadas con Queso Mozzarella (${'$'}180)
 
-- HAMBURGUESA CASERA a la PARRILLA en Pan Figazza con Lechugas, Tomates, Cebollas Asadas, Panceta Crocante y Papas ($70)
+---------------- PARA VENIR A BUSCAR o PARA DELIVERY ------------
 
-o
+- EMPANADAS rellenas con Mix de Vegetales, Curry de Especias Japones, Mozzarella y Semillas (${'$'}25c/u)
 
-TARTA del Dia: Tomates Asados, Morrones y Cebollas salteadas, Pollo y Mozzarella, Ricotta y Avena. OPCION MEDIA TARTA ($90) o Porcion con Ensalada Verde y Tomate Fresco ($70)
+- ESPECIAL COCINA MEXICANA (Ver menu aparte)
 
-Ademas:
+- PAPAS SOHO Gratinadas con Queso Mozzarella, Panceta Ahumada de Las Dinas, Verdeo y Semillas (${'$'}125)
 
-- Ensaladas Frescas ($40)
+- POLLO al CURRY de Especias JAPONES, Rucula. Tomate, Cebollas confitadas, y Papas Especiadas (${'$'}170) (Pechuga)
 
-- Ensaladas de Frutas ($40)
+- OJO DE BIFE a la PARRILLA (300gr) Chimichurri de Tomates y Papa Americana, gratinada con Mozzarella, Panceta y Verdeo (${'$'}210)
 
-- Tomates Asados Rellenos con mix de Arroz y Vegetales con Ensalada Verde ($50)"""
+- CALABAZA ASADA RELLENA con Mix de Vegetales, Curry de Especias, Arroz, Mozzarella Gratinada y Pesto de Rucula con Semillas (${'$'}130)
 
-const val SOHO_MENU_POST_3 = """HOY - Martes - Mediodía en Cocina Soho!!!
+------- TARTAS -------
 
-Para este mediodia te propongo:
+- CALABAZA ASADA, Pollo, Verdeo, Crema, Huevo y Avena.
 
-- BIFE de CHORIZO a la parrilla con Tomates Asados Rellenos y Gratinados  con pesto de Rucula ($70)
+- CAPRESSE de Jamón Cocido, Mozzarella, Tomate, Queso Sardo, Albahaca, Tomates Cherry Confitados.
 
-o
+- PASCUALINA de Espinaca, Ricotta, Huevo, Queso Sardo, Semillas.
 
-- ENSALADA COBB con hojas Verdes, Pollo, Panceta, Queso Azul, Huevo, Verdeo y Aderezo Balsamico ($70)
+- VEGETALES a la PARRILLA, Mozzarella y Avena.
 
-o
+PORCIÓN con ENSALADA VERDE y TOMATE (${'$'}100). 1/4 de TARTA SOLA (${'$'}100). MEDIA TARTA (${'$'}150) o TARTA ENTERA (${'$'}280).
 
-TARTA del Dia: Mix de Vegetales, Cerdo, Avena, Ricotta y semillas (Media Tarta $90) o POrcion con ensalada verde y tomate ($70)
+------- HAMBURGUESAS y SANDWICHES ---------
 
-ADEMAS:
+- BONDIOLITA AHUMADA en Pan a la Chapa, Rucula, Tomate, Cebollas Asadas, Huevo, Verdeo y Papas (${'$'}180)
 
-- CALABAZAS ASADAS RELLENAS con mix de vegetales, Arroz, Mozzarella Gratinada y Pesto de Rucula. ($70)
+- POLLITO a la PARRILLA con GUACAMOLE en Pan a la Chapa. Rucula, Huevo a la plancha, Tomate y Papas Asadas (${'$'}160)
 
-- ENSALADAS FRESCAS ($40)
+- HAMBURGUESA IRLANDESA de CARNE, a la Parrilla, Cebollas salteadas con Whisky irlandés, Morcilla a la plancha, Mayonesa de hierbas, Rucula, y Tomate (${'$'}160)
 
-- ENSALADAS DE FRUTAS FRESCAS ($40)
+- CHIVITO URUGUAYO de OJO DE BIFE a la Parrilla, en Pan de Campo, Huevo, Lechuga, Tomate, Panceta, Morron Asado y Jamon cocido. (${'$'}180)
 
-PARA CONSULTAS y PEDIDOS llamar al 44 3 22 74 o por mensaje privado en la Fan Page o personalmente por el local que queda en la calle Maipu 667!!
+- CACHORRO BRASILERO de Salchicha ahumada a la parrilla, tomate, Choclo, Queso Gouda Gratinado y Mostaza Antigua (${'$'}140)
 
-Otro final
-mas"""
+- HAMBURGUESA de CERDO TEX MEX a la parrilla, con Pico de Gallo (Tomate, cebolla, cilantro, limón y especias) Barbacoa ahumada, Queso Doble cheddar (${'$'}160)
 
-const val SOHO_MENU_POST_4 = """Para este mediodia te propongo:
+- HAMBURGUESA CLASICA de Carne a la parrilla, Pan figazza, Lechuga, Tomate, Huevo y Barbacoa Ahumada (${'$'}140)
 
-- BIFE de CHORIZO a la parrilla con Tomates Asados Rellenos y Gratinados  con pesto de Rucula ($70)
+- POLLO CAPRESE en Pan Integral, Rucula, Tomate, Brotes de Alfalfa y Mostaza Antigua (${'$'}140)
 
-o
+- BONDIOLA CLASICA a la Parrilla, en Pan Pebete, Rucula, Tomate, Huevo a la Plancha y Barbacoa (${'$'}150)
 
-- ENSALADA COBB con hojas Verdes, Pollo, Panceta, Queso Azul, Huevo, Verdeo y Aderezo Balsamico ($70)
+--------- ENSALADAS COMPUESTAS ------------
 
-o
+- CAESAR CLASICA
+Mix de Hojas Verdes, croutones de Pan Tostado, Hebras de Queso Sardo, Verdeo Fresco y Aderezo Clasico Caesar a base de yemas, anchoas, mostaza, salsa inglesa, aceite y jugo de Limón (${'$'}115)
 
-TARTA del Dia: Mix de Vegetales, Cerdo, Avena, Ricotta y semillas (Media Tarta $90) o POrcion con ensalada verde y tomate ($70)
-"""
++ POLLO (${'$'}120)
 
-const val NOT_SOHO_MENU_POST_1 = """HOY - Martes - Mediodía en Cocina Soho!!!
++ BONDIOLA AHUMADA (${'$'}130)
+
+-COBB
+Mix de Hojas Verdes, Queso Azul, Huevo, Panceta Ahumada, Ciboulette, Pollo y Aderezo Balsamico a base de Aceto, Oliva, Echalotte y Miel (${'$'}120)
+
+-LIMONETTA
+Rucula, Mix de Vegetales a la Parrilla (Zuccini / Berenjena / Morrones / Cebolla Asadas / Zanahoria / Verdeo), Tomates Cherries Frescos y Aderezo Limonetta (Emulsión de Limón y Oliva) (${'$'}120)
+
+-COUS COUS MARROQUI
+Mix de Hojas Verdes, Calabaza Asada, Cous Cous Marroqui hidratado en frio con Tomate, Limón y Oliva, cebollas Moradas, Tomate Fresco y Menta (${'$'}120)
+
++ POLLO (${'$'}130)
+
+---------- PIZZAS SOHO a la PARRILLA -----------
+
+Individuales ${'$'}70
+
+-JAMON COCIDO
+Queso Mozzarella, Tomates Secos y Verdeo Fresco
+
+-JAMON CRUDO
+Queso Sardo en hebras y Pesto de Rucula con Semillas
+
+-CANTIMPALO
+Queso Mozzarella, Tomates Cherries Frescos y Oregano
+
+-VEGETALES ASADOS
+Mix de Vegetales a la parrilla, Mozzarella y Semillas
+
+-CEBOLLAS AL MALBEC
+Queso Provolone y Chimichurri
+
+-MOZZARELLA
+Con Salsa de Tomate y Oregano"""
+
+const val SOHO_MENU_INVALID = """HOY - Martes - Mediodía en Cocina Soho!!!
 
 Para este mediodia te propongo:
 
 ...!!"""
 
-const val NOT_SOHO_MENU_POST_2 = """Buenos días!!!
-
-Les informamos que a partir de la semana que viene el precio del menú del día será de $90.
-
-Las ensaladas van a estar a $40."""
-
-const val ALPUNTO_MENU_POST_1 = """Hoy JUEVES en Al Punto Justo tenemos:
+const val ALPUNTO_MENU_VALID = """Hoy JUEVES en Al Punto Justo tenemos:
 
 - SANDWICH DE BONDIOLA CON PAPAS AL HORNO ( con QUESO FUNDIDO, TOMATE, CEBOLLA CARAMELIZADA y ADEREZO ) una bomba de sabores para no dejar pasar, con pancito casero y el toque de la casa 🍔👌
 
@@ -122,20 +160,4 @@ Y como alternativa fresquita las ensaladas de la casa 🥗🍅🥕
 
 Hacenos tu pedido al 2494515551, o al 4387792, nuestro nuevo teléfono fijo, y en un ratito te lo llevamos al punto justo!"""
 
-const val ALPUNTO_MENU_POST_2 = """Hoy VIERNES en Al Punto Justo tenemos:
-
-- SANDWICH DE BONDIOLA CON PAPAS AL HORNO ( con QUESO FUNDIDO, LECHUGA, TOMATE, CEBOLLA CARAMELIZADA y ADEREZO ) una bomba de sabores para no dejar pasar, con pancito casero y el toque de la casa 🍔👌
-
-- TARTA DE CALABAZA Y ESPINACA CON ENSALADA ( Mix de hojas verdes frescas, tomate cherry y aderezo de la casa) opción bien tentadora 😋
-
-- HAMBURGUESAS VEGETARIANAS (con tomate y queso fundido) CON ENSALADA ( Mix de hojas verdes frescas, calabazas asadas, tomate cherry y aderezo de la casa ).
-
-Y como alternativa fresquita las ensaladas de la casa 🥗🍅🥕
-
-- ENSALADA CAESAR ( Mix de hojas verdes frescas, tomate cherry, daditos de pollo, crutones y semillas ).
-
-- ENSALADA ATUNADA ( Mix de hojas verdes frescas, tomate cherry, cebolla caramelizada, huevo duro, atún y semillas )
-
-Hacenos tu pedido al 2494515551, o al 4387792, nuestro nuevo teléfono fijo, y en un ratito te lo llevamos al punto justo!"""
-
-const val NOT_ALPUNTO_MENU_POST_1 = """A partir de mañana el menu del dia sale $100 - ensaladas $90"""
+const val ALPUNTO_MENU_INVALID = """A partir de mañana el menu del dia sale $100 - ensaladas $90"""
