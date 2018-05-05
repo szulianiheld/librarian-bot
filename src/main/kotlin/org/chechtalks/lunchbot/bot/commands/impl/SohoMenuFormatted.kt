@@ -7,21 +7,31 @@ import org.chechtalks.lunchbot.bot.commands.MENU
 import org.chechtalks.lunchbot.bot.commands.MultiMessageBotCommand
 import org.chechtalks.lunchbot.bot.utils.MenuParser
 import org.chechtalks.lunchbot.extensions.contains
+import org.chechtalks.lunchbot.slack.methods.ChatOperations
 import org.springframework.stereotype.Component
 
 @Component
 class SohoMenuFormatted(
-        private val sohoMenuUnformatted: SohoMenuUnformatted)
+        private val sohoMenuUnformatted: SohoMenuUnformatted,
+        private val chatOperations: ChatOperations)
     : MultiMessageBotCommand {
 
-    override fun invoked(event: Event) = event.text.contains(MENU, COCINA_SOHO) && !sohoMenuUnformatted.invoked(event)
+    private lateinit var channel: String
+
+    override fun invoked(event: Event): Boolean {
+        val invoked = event.text.contains(MENU, COCINA_SOHO) && !sohoMenuUnformatted.invoked(event)
+        if (invoked) {
+            channel = event.channelId
+        }
+        return invoked
+    }
 
     override fun execute(): List<Message> {
-        val sohoMenus = sohoMenuUnformatted.successResponse() ?: return defaultResponse()
+        val menuPost = sohoMenuUnformatted.successResponse() ?: return defaultResponse()
+        val parsedLines = MenuParser.parseSoho(menuPost)
+        chatOperations.postThreadedMessages(channel, "Cocina soho :point_down:", parsedLines)
 
-        return MenuParser
-                .parseSoho(sohoMenus)
-                .map(::Message)
+        return emptyList()
     }
 
     private fun defaultResponse() = listOf(Message(sohoMenuUnformatted.defaultResponse()))

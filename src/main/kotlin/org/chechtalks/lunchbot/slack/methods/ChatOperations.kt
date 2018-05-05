@@ -27,7 +27,7 @@ class ChatOperations(
         return response.message
     }
 
-    fun postThreadedMessages(channel: String, text: String, vararg children: String) {
+    fun postThreadedMessages(channel: String, text: String, children: List<String>) {
         val mainMessage = postMessage(channel, text)
 
         children.forEach { postMessage(channel, it, mainMessage.ts) }

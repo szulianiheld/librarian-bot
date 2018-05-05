@@ -1,8 +1,8 @@
 package org.chechtalks.lunchbot.bot.utils
 
-import com.natpryce.hamkrest.assertion.assert
-import com.natpryce.hamkrest.startsWith
+import org.chechtalks.lunchbot.constants.ALPUNTO_MENU_INVALID
 import org.chechtalks.lunchbot.constants.ALPUNTO_MENU_VALID
+import org.chechtalks.lunchbot.constants.SOHO_MENU_INVALID
 import org.chechtalks.lunchbot.constants.SOHO_MENU_VALID
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.given
@@ -17,16 +17,14 @@ class MenuParserSpec : Spek({
         on("parsing soho menu") {
             val result = MenuParser.parseSoho(SOHO_MENU_VALID)
             it("parses all lines") {
-                expect(135) { result.size }
-                expect("LENGUADO a la PIZZA con tomate fresco, oregano, morrón asado, aceitunas y Papas Especiadas") {result[40]}
+                expect(78) { result.size }
             }
         }
 
         on("parsing al punto justo menu") {
             val result = MenuParser.parseSoho(ALPUNTO_MENU_VALID)
             it("parses all menus") {
-                expect(17) { result.size }
-                expect("- HAMBURGUESAS VEGETARIANAS (con tomate y queso fundido) CON ENSALADA ( Mix de hojas verdes frescas, calabazas asadas, tomate cherry y aderezo de la casa ).") {result[8]}
+                expect(9) { result.size }
             }
         }
 
@@ -37,6 +35,20 @@ class MenuParserSpec : Spek({
             it("parses all menus") {
                 expect(36) { result.size }
                 expect("Roquefort (Muzzarella y roquefort)") { result[32] }
+            }
+        }
+
+        on("validating soho menu") {
+            val result = MenuParser.isValidSohoMenu(SOHO_MENU_INVALID)
+            it("detects invalid menus") {
+                expect(false) { result }
+            }
+        }
+
+        on("validating al punto justo menu") {
+            val result = MenuParser.isValidAlPuntoMenu(ALPUNTO_MENU_INVALID)
+            it("detects invalid menus") {
+                expect(false) { result }
             }
         }
     }

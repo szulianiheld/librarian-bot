@@ -11,6 +11,7 @@ import org.chechtalks.lunchbot.config.MessageResolver
 import org.chechtalks.lunchbot.extensions.contains
 import org.chechtalks.lunchbot.social.FacebookHelper
 import org.springframework.stereotype.Component
+import java.time.LocalDate
 
 @Component
 class AlPuntoMenuUnformatted(private val facebook: FacebookHelper, private val messages: MessageResolver) : SingleMessageBotCommand {
@@ -23,7 +24,7 @@ class AlPuntoMenuUnformatted(private val facebook: FacebookHelper, private val m
 
     override fun help() = messages.get("lunchbot.response.help.menu")
 
-    internal fun successResponse() = facebook.getFirstPost("alpuntojusto", ::isValidAlPuntoMenu)
+    internal fun successResponse() = facebook.getFirstPost("alpuntojusto", ::isValidAlPuntoMenu, LocalDate.of(2018,5,3))
 
     internal fun defaultResponse() = messages.get("lunchbot.response.menu.notfound")
 }

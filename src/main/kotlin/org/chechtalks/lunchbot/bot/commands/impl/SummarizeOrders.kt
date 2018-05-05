@@ -54,14 +54,11 @@ class SummarizeOrders(
 
     private fun getOrderSummaries(): List<String> {
         return fetchBotMessages()
-                .filter { isAMenu(it) }
                 .filter { hasReactions(it) }
                 .map { toOrderSummary(it) }
     }
 
     private fun fetchBotMessages() = channelOperations.fetchTodayBotMessages(channel)
-
-    private fun isAMenu(it: ApiMessage) = it.text.isQuoted()
 
     private fun hasReactions(it: ApiMessage) = it.reactions != null
 

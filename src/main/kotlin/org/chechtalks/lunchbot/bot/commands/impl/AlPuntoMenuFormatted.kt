@@ -7,21 +7,31 @@ import org.chechtalks.lunchbot.bot.commands.MENU
 import org.chechtalks.lunchbot.bot.commands.MultiMessageBotCommand
 import org.chechtalks.lunchbot.bot.utils.MenuParser
 import org.chechtalks.lunchbot.extensions.contains
+import org.chechtalks.lunchbot.slack.methods.ChatOperations
 import org.springframework.stereotype.Component
 
 @Component
 class AlPuntoMenuFormatted(
-        private val alPuntoMenuUnformatted: AlPuntoMenuUnformatted)
+        private val alPuntoMenuUnformatted: AlPuntoMenuUnformatted,
+        private val chatOperations: ChatOperations)
     : MultiMessageBotCommand {
 
-    override fun invoked(event: Event) = event.text.contains(MENU, AL_PUNTO_JUSTO) && !alPuntoMenuUnformatted.invoked(event)
+    private lateinit var channel: String
+
+    override fun invoked(event: Event): Boolean {
+        val invoked = event.text.contains(MENU, AL_PUNTO_JUSTO) && !alPuntoMenuUnformatted.invoked(event)
+        if (invoked) {
+            channel = event.channelId
+        }
+        return invoked
+    }
 
     override fun execute(): List<Message> {
-        val sohoMenus = alPuntoMenuUnformatted.successResponse() ?: return defaultResponse()
+        val menuPost = alPuntoMenuUnformatted.successResponse() ?: return defaultResponse()
+        val parsedLines = MenuParser.parseAlPunto(menuPost)
+        chatOperations.postThreadedMessages(channel, "Al punto justo :point_down:", parsedLines)
 
-        return MenuParser
-                .parseAlPunto(sohoMenus)
-                .map(::Message)
+        return emptyList()
     }
 
     private fun defaultResponse() = listOf(Message(alPuntoMenuUnformatted.defaultResponse()))

@@ -2,22 +2,21 @@ package org.chechtalks.lunchbot.bot.utils
 
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 import com.fasterxml.jackson.module.kotlin.readValue
-import org.springframework.stereotype.Component
 import java.net.URL
 
 class MenuParser {
     companion object {
 
         fun parseSoho(rawTextMenu: String): List<String> {
-            val lines = rawTextMenu
+            return rawTextMenu
                     .split("\n")
-            return lines
+                    .filter { it.isNotEmpty() }
         }
 
         fun parseAlPunto(rawTextMenu: String): List<String> {
-            val lines = rawTextMenu
+            return rawTextMenu
                     .split("\n")
-            return lines
+                    .filter { it.isNotEmpty() }
         }
 
         fun parse(jsonMenu: URL): List<String> {
