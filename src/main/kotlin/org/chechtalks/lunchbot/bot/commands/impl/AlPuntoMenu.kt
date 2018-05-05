@@ -29,10 +29,13 @@ class AlPuntoMenu(private val facebook: FacebookHelper,
     }
 
     override fun execute(): List<Message> {
-        val menuPost = successResponse() ?: return defaultResponse()
-        val parsedLines = MenuParser.parseAlPunto(menuPost)
-        chatOperations.postThreadedMessages(channel, "Al punto justo :point_down:", parsedLines)
+        val menuPost = successResponse()
+        val responseLines = when (menuPost) {
+            null -> defaultResponse()
+            else -> MenuParser.parseAlPunto(menuPost)
+        }
 
+        chatOperations.postThreadedMessages(channel, "Al punto justo :point_down:", responseLines)
         return emptyList()
     }
 
@@ -40,5 +43,5 @@ class AlPuntoMenu(private val facebook: FacebookHelper,
 
     internal fun successResponse() = facebook.getFirstPost("alpuntojusto", MenuParser.Companion::isValidAlPuntoMenu)
 
-    internal fun defaultResponse() = listOf(Message(messages.get("lunchbot.response.menu.notfound")))
+    internal fun defaultResponse() = listOf(messages.get("lunchbot.response.menu.notfound"))
 }

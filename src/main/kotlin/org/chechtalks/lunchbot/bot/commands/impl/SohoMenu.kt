@@ -30,9 +30,13 @@ class SohoMenu(
     }
 
     override fun execute(): List<Message> {
-        val menuPost = successResponse() ?: return defaultResponse()
-        val parsedLines = MenuParser.parseSoho(menuPost)
-        chatOperations.postThreadedMessages(channel, "Cocina soho :point_down:", parsedLines)
+        val menuPost = successResponse()
+        val responseLines = when (menuPost) {
+            null -> defaultResponse()
+            else -> MenuParser.parseSoho(menuPost)
+        }
+
+        chatOperations.postThreadedMessages(channel, "Cocina soho :point_down:", responseLines)
 
         return emptyList()
     }
@@ -41,5 +45,5 @@ class SohoMenu(
 
     internal fun successResponse() = facebook.getFirstPost("CocinaSoho", MenuParser.Companion::isValidSohoMenu)
 
-    internal fun defaultResponse() = listOf(Message(messages.get("lunchbot.response.menu.notfound")))
+    internal fun defaultResponse() = listOf(messages.get("lunchbot.response.menu.notfound"))
 }
