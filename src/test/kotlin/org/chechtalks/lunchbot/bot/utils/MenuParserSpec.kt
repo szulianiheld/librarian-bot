@@ -17,7 +17,7 @@ class MenuParserSpec : Spek({
         on("parsing soho menu") {
             val result = MenuParser.parseSoho(SOHO_MENU_VALID)
             it("parses all lines") {
-                expect(78) { result.size }
+                expect(58) { result.size }
             }
         }
 

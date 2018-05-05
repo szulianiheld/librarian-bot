@@ -9,7 +9,7 @@ class MenuParser {
 
         fun parseSoho(rawTextMenu: String): List<String> {
             return rawTextMenu
-                    .split("\n")
+                    .split("\n\n")
                     .filter { it.isNotEmpty() }
         }
 
