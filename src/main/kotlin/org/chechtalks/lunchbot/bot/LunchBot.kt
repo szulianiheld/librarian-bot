@@ -7,6 +7,7 @@ import me.ramswaroop.jbot.core.slack.models.Event
 import org.chechtalks.lunchbot.bot.commands.BotCommand
 import org.chechtalks.lunchbot.bot.messaging.BotResponse
 import org.chechtalks.lunchbot.config.MessageResolver
+import org.chechtalks.lunchbot.extensions.pForEach
 import org.springframework.core.env.Environment
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.WebSocketSession
@@ -31,7 +32,7 @@ class LunchBot(private val env: Environment, private val commands: List<BotComma
 
         commands.filter { it.invoked(event) }
                 .also { handleUnrecognizedCommand(it, response) }
-                .forEach { it.execute(response) }
+                .pForEach { it.execute(response) }
     }
 
     private fun handleUnrecognizedCommand(it: List<BotCommand>, response: BotResponse) {
