@@ -21,7 +21,7 @@ apply plugin: 'org.junit.platform.gradle.plugin'
 
 jar {
     baseName 'lunch-bot'
-    version '0.4.0-SNAPSHOT'
+    version '0.5.0-SNAPSHOT'
     archiveName "${jar.baseName}.${jar.extension}"
 }
 
