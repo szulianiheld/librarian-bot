@@ -34,7 +34,15 @@ class MenuParserSpec : Spek({
             val result = MenuParser.parse(rosaMenus)
             it("parses all menus") {
                 expect(36) { result.size }
-                expect("Roquefort (Muzzarella y roquefort)") { result[32] }
+            }
+        }
+
+        on("parsing mafalda menu") {
+            val jsonMenus = "/menu/mafalda.json"
+            val rosaMenus = this.javaClass.getResource(jsonMenus)
+            val result = MenuParser.parse(rosaMenus)
+            it("parses all menus") {
+                expect(6) { result.size }
             }
         }
 
