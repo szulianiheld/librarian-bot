@@ -2,7 +2,6 @@ package org.chechtalks.lunchbot.bot
 
 import me.ramswaroop.jbot.core.slack.SlackService
 import me.ramswaroop.jbot.core.slack.models.User
-import org.chechtalks.lunchbot.bot.model.DailyMenus.Companion.isMenu
 import org.chechtalks.lunchbot.social.FacebookHelper
 import org.hamcrest.Matchers.containsString
 import org.junit.Assert.assertThat
@@ -14,6 +13,7 @@ import org.junit.runner.RunWith
 import org.mockito.InjectMocks
 import org.mockito.Mock
 import org.mockito.Mockito.`when`
+import org.mockito.Mockito.any
 import org.mockito.runners.MockitoJUnitRunner
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.boot.test.rule.OutputCapture
@@ -41,7 +41,7 @@ class LunchBotTest {
     @InjectMocks
     lateinit private var bot: LunchBot
 
-    @Rule @JvmField
+    @Rule
     var capture = OutputCapture()
 
     val SOHO_MENU_NOT_FOUND = "No encontre el menu de hoy para Cocina Soho :thinking_face:"
@@ -55,7 +55,7 @@ class LunchBotTest {
         user.id = "UEADGH12S"
 
         `when`(slackService.currentUser).thenReturn(user)
-        `when`(facebook.getFirstPost("CocinaSoho", ::isMenu)).thenReturn(null)
+        `when`(facebook.getFirstPost("CocinaSoho", any())).thenReturn(null)
     }
 
     @Test

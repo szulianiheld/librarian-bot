@@ -1,13 +1,13 @@
 package org.chechtalks.lunchbot.config
 
-import org.hamcrest.Matchers.`is`
-import org.hamcrest.Matchers.containsString
-import org.junit.Assert.assertThat
+import com.natpryce.hamkrest.assertion.assert
+import com.natpryce.hamkrest.containsSubstring
 import org.junit.Test
 import org.junit.runner.RunWith
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
 import org.springframework.test.context.junit4.SpringRunner
+import kotlin.test.expect
 
 @RunWith(SpringRunner::class)
 @SpringBootTest
@@ -17,13 +17,13 @@ class MessageResolverTest {
     private lateinit var messages: MessageResolver
 
     @Test
-    fun it_resolves_existent_messages() {
-        assertThat(messages.get("lunchbot.response.default"), containsString("No Entendí"))
+    fun `it resolves existent messages`() {
+        assert.that(messages.get("lunchbot.response.default"), containsSubstring("No Entendí"))
     }
 
     @Test
     fun it_resolves_nonexistent_messages() {
-        assertThat(messages.get("totally.nonexistent.code"), `is`("totally.nonexistent.code"))
+        expect("totally.nonexistent.code") { messages.get("totally.nonexistent.code") }
     }
 
 }

@@ -20,7 +20,7 @@ spring:
     social:
         facebook:
             appId: 1102158899930097
-            appSecret: 152a24d77f3424ce5ae0cfc1bf5b7a64
+            appSecret: a8a610fa00434fcd662d168690d59673
 
 # JBot
 rtmUrl: https://slack.com/api/rtm.start?token={token}&simple_latest&no_unreads

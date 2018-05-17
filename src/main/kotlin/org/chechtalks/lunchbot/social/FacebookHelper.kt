@@ -18,6 +18,7 @@ class FacebookHelper(env: Environment) {
         val token = getFacebookAccessToken(appId, appSecret)
 
         facebook = FacebookTemplate(token)
+        facebook.setApiVersion("2.9")
     }
 
     fun getFirstPost(user: String, predicate: (String) -> Boolean, date: LocalDate = LocalDate.now()): String? {

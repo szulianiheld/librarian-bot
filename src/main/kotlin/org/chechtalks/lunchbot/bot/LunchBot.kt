@@ -7,26 +7,23 @@ import me.ramswaroop.jbot.core.slack.models.Event
 import org.chechtalks.lunchbot.bot.commands.BotCommand
 import org.chechtalks.lunchbot.bot.messaging.BotResponse
 import org.chechtalks.lunchbot.config.MessageResolver
-import org.slf4j.LoggerFactory
+import org.chechtalks.lunchbot.extensions.pForEach
 import org.springframework.core.env.Environment
 import org.springframework.stereotype.Component
 import org.springframework.web.socket.WebSocketSession
+import javax.annotation.PostConstruct
 
 @Component
 class LunchBot(private val env: Environment, private val commands: List<BotCommand>, private val messages: MessageResolver) : Bot() {
 
-    private val LOG = LoggerFactory.getLogger(LunchBot::class.java)
-
-    override fun getSlackToken(): String {
-        val slackToken = env.getProperty("slackBotToken")
-        LOG.trace("getting slack token : $slackToken")
-
-        return slackToken
+    @PostConstruct
+    fun setup() {
+        BotUser.id = slackService.currentUser?.id ?: "mock-user"
     }
 
-    override fun getSlackBot(): Bot {
-        return this
-    }
+    override fun getSlackToken() = env.getProperty("slackBotToken")!!
+
+    override fun getSlackBot() = this
 
     @Controller(events = arrayOf(EventType.DIRECT_MENTION, EventType.DIRECT_MESSAGE))
     fun onMessage(session: WebSocketSession, event: Event) {
@@ -35,7 +32,7 @@ class LunchBot(private val env: Environment, private val commands: List<BotComma
 
         commands.filter { it.invoked(event) }
                 .also { handleUnrecognizedCommand(it, response) }
-                .forEach { it.execute(response) }
+                .pForEach { it.execute(response) }
     }
 
     private fun handleUnrecognizedCommand(it: List<BotCommand>, response: BotResponse) {
