@@ -24,6 +24,6 @@ notifications:
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then
     docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD";
-    docker build -t cesdperez/lunch-bot .;
-    docker push cesdperez/lunch-bot;
+    docker build -t szulianiheld/librarian-bot .;
+    docker push szulianiheld/librarian-bot;
     fi

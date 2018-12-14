@@ -9,8 +9,8 @@ management:
 logging:
     level:
         org:
-            chechtalks:
-                lunchbot: TRACE
+            maiabot:
+                librarianbot: TRACE
 
 spring:
     messages:

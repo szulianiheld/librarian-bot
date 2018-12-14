@@ -1,7 +1,7 @@
 {
-  "name": "lunch-bot",
-  "description": "Slack bot for handling food reservations",
-  "repository": "https://github.com/chechtalks/lunch-bot",
-  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "name": "librarian-bot",
+  "description": "Bot to manage the request and inventory of books in Tandil Office.",
+  "repository": "https://github.com/SantiagoZH/librarian-bot",
+  "logo": "http://a1.mzstatic.com/us/r1000/091/Purple/v4/2b/a3/99/2ba39900-4b9f-6504-c304-90449a82d438/Librarian_Pro.png",
   "keywords": ["kotlin", "slack", "jbot"]
 }

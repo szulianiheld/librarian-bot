@@ -1,10 +1,10 @@
-# lunch-bot 
+# librarian-bot 
 
 [![Kotlin 1.1](https://img.shields.io/badge/Kotlin-1.1.161-blue.svg)](http://kotlinlang.org)
 [![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
 ![Heroku](http://heroku-badge.herokuapp.com/?app=morfi-bot&style=flat&svg=1&root=health)
 
-Slack bot for handling food reservations at the office.
+Bot to manage the request and inventory of books in Tandil Office.
 
 It's written in [Kotlin](https://kotlinlang.org/) and consumes Slack API through [JBot](https://github.com/ramswaroop/jbot) and [JSlack](https://github.com/seratch/jslack).
 
@@ -30,6 +30,6 @@ $ ./gradlew bootRun -DslackBotToken=[your-token-here]
 ### Run with Docker
 
 ```bash
-$ docker pull cesdperez/lunch-bot:latest
-$ docker run -p 8080:8080 -d -e "slackBotToken=[your-token-here]" cesdperez/lunch-bot
+$ docker pull szulianiheld/librarian-bot:latest
+$ docker run -p 8080:8080 -d -e "slackBotToken=[your-token-here]" szulianiheld/librarian-bot
 ```
