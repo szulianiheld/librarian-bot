@@ -19,7 +19,7 @@ services:
 
 notifications:
   email: false
-  slack: tandil:2a0bvGqxPuOtbyJZadge1w4z
+  slack: tandil:qOcn3ZrZP75Vl984XIsDLsVH
 
 after_success:
   - if [ "$TRAVIS_BRANCH" == "master" ]; then

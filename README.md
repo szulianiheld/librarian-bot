@@ -1,8 +1,7 @@
 # librarian-bot 
 
 [![Kotlin 1.1](https://img.shields.io/badge/Kotlin-1.1.161-blue.svg)](http://kotlinlang.org)
-[![Build Status](https://travis-ci.org/chechtalks/lunch-bot.svg?branch=develop)](https://travis-ci.org/chechtalks/lunch-bot)
-![Heroku](http://heroku-badge.herokuapp.com/?app=morfi-bot&style=flat&svg=1&root=health)
+[![Build Status](https://travis-ci.org/szulianiheld/librarian-bot.svg?branch=develop)](https://travis-ci.org/szulianiheld/librarian-bot)
 
 Bot to manage the request and inventory of books in Tandil Office.
 
@@ -11,11 +10,6 @@ It's written in [Kotlin](https://kotlinlang.org/) and consumes Slack API through
 ## How to run it
 
 Beforehand [create a Slack bot](https://my.slack.com/services/new/bot) in your team and get your token.
-
-### Deploy to Heroku
-
-1. [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-2. Make sure you set a *Heroku configuration variable* with the key `slackBotToken` and your token as value.
 
 ### Run locally
 
